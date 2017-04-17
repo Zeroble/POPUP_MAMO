@@ -26,6 +26,12 @@ public class Broadcast extends BroadcastReceiver {
         }
         if (Intent.ACTION_SCREEN_OFF == intent.getAction()) {// 화면 꺼짐
             Log.i("아아 마이크테스트","화면 꺼짐");
+
+        }
+
+        if(Intent.ACTION_BOOT_COMPLETED == intent.getAction()){//
+            Intent Service = new Intent(context, MainService.class);
+            context.startService(Service);
         }
     }
 }

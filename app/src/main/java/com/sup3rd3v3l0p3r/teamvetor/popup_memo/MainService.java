@@ -4,12 +4,16 @@ import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.util.Log;
 
 public class MainService extends Service {
     @Override
     public void onCreate() {
+        SharedPreferences String = getSharedPreferences("String", MODE_PRIVATE);
+        if(String.getInt("autoStart",1)==0)
+            onDestroy();
         Log.i("oncreat","BROADCASTRECEVIER등록");
         IntentFilter intentFilter=new IntentFilter(Intent.ACTION_SCREEN_ON);
         intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
@@ -20,8 +24,13 @@ public class MainService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.i("ㄴㅇㄹ","쁘쁘쁘ㅡㅃ");
-        if(intent == null){
+        SharedPreferences String = getSharedPreferences("String", MODE_PRIVATE);
+        if(String.getInt("autoStart",1)==0)
+            onDestroy();
+
+        else if(intent == null){
+            if(String.getInt("autoStart",1)==0)
+                onDestroy();
             IntentFilter intentFilter=new IntentFilter(Intent.ACTION_SCREEN_ON);
             BroadcastReceiver myReceiver = new Broadcast();
             registerReceiver(myReceiver,intentFilter);
@@ -35,6 +44,8 @@ public class MainService extends Service {
 
     @Override
     public void onDestroy() {
+        stopSelf();
+        stopForeground(true);
         super.onDestroy();
     }
 }

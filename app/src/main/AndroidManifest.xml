@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sup3rd3v3l0p3r.teamvetor.popup_memo">
-
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,6 +18,14 @@
         </activity>
         <service android:name=".MainService" />
         <activity android:name=".ShowMessage"/>
+        <receiver android:name=".Broadcast"
+            android:enabled="true"
+            android:exported="false"
+            android:label="Reciver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7e7e7e"
+    android:background="#ffffff"
     android:orientation="vertical"
     tools:context="com.sup3rd3v3l0p3r.teamvetor.popup_memo.MainActivity">
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.2" />
+        android:layout_weight="0.1" />
 
     <TextView
         android:layout_width="match_parent"
@@ -32,7 +32,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
-        android:layout_marginBottom="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:background="@drawable/round">
@@ -40,10 +39,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:background="#7e7e7e"
-            android:gravity="top"
+            android:gravity="center|left"
             android:hint="입력"
-            android:id="@+id/contents"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:background="@android:color/transparent"
+            android:id="@+id/editText"
             android:textColor="#000" />
     </RelativeLayout>
 
@@ -51,7 +52,59 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.1" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/round"
+            android:gravity="center"
+            android:textColor="#000"
+            android:onClick="startService"
+            android:text="시작"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/round"
+            android:gravity="center"
+            android:textColor="#000"
+            android:onClick="stopService"
+            android:text="중지"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="match_parent" />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/round"
+            android:gravity="center"
+            android:textColor="#292929"
+            android:onClick="stopService"
+            android:hint="횟수 입력"
+            android:id="@+id/editTimes"
+            android:inputType="number"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
+    </LinearLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -60,6 +113,7 @@
         android:layout_weight="1"
         android:background="@drawable/round"
         android:gravity="center"
+        android:textColor="#000"
         android:onClick="OK"
         android:text="확인"
         android:textSize="20sp"
@@ -67,5 +121,5 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.2"/>
+        android:layout_weight="0.1"/>
 </LinearLayout>
