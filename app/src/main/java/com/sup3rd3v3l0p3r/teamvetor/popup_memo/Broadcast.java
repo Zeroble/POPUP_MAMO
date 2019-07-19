@@ -13,9 +13,7 @@ import android.util.Log;
 public class Broadcast extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.i("아아 마이크테스트","서비스에서 브로드캐스트 리시버로 넘어옴");
         if (Intent.ACTION_SCREEN_ON == intent.getAction()) {// 화면 켜짐
-            Log.i("아아 마이크테스트","화면 켜짐");
             Intent Show = new Intent(context,ShowMessage.class);
             PendingIntent pendingIntent = PendingIntent.getActivities(context,0, new Intent[]{Show},0);
             try {

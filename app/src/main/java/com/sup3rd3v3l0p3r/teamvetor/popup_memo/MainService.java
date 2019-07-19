@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.IBinder;
-import android.util.Log;
 
 public class MainService extends Service {
     @Override
@@ -14,7 +13,6 @@ public class MainService extends Service {
         SharedPreferences String = getSharedPreferences("String", MODE_PRIVATE);
         if(String.getInt("autoStart",1)==0)
             onDestroy();
-        Log.i("oncreat","BROADCASTRECEVIER등록");
         IntentFilter intentFilter=new IntentFilter(Intent.ACTION_SCREEN_ON);
         intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
         BroadcastReceiver myReceiver = new Broadcast();

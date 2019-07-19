@@ -18,6 +18,7 @@
         </activity>
         <service android:name=".MainService" />
         <activity android:name=".ShowMessage"/>
+        <activity android:name=".Color"/>
         <receiver android:name=".Broadcast"
             android:enabled="true"
             android:exported="false"

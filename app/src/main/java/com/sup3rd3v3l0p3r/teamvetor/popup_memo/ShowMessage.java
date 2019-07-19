@@ -19,8 +19,11 @@ public class ShowMessage extends AppCompatActivity{
         setContentView(R.layout.message);
         String text;
         TextView textView = (TextView) findViewById(R.id.textView);
-        SharedPreferences String = getSharedPreferences("String", MODE_PRIVATE);
-        text = String.getString("text","Nothing to show");
+        SharedPreferences save = getSharedPreferences("String", MODE_PRIVATE);
+
+        text = save.getString("text","Nothing to show");
+        textView.setTextColor(save.getInt("color",0));
+        textView.setTextSize(save.getInt("textSize",25));
         textView.setText(text);
     }
     public void Clear(View v){

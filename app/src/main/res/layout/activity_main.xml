@@ -4,122 +4,261 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="#434343"
     android:orientation="vertical"
     tools:context="com.sup3rd3v3l0p3r.teamvetor.popup_memo.MainActivity">
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="내용을 입력하세요."
-        android:textColor="#000"
-        android:textSize="25sp"
-        android:textStyle="bold" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:background="@drawable/round">
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:gravity="center|left"
-            android:hint="입력"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:background="@android:color/transparent"
-            android:id="@+id/editText"
-            android:textColor="#000" />
-    </RelativeLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
+        android:background="#9f9f9f"
+        android:layout_weight="1">
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/round"
             android:gravity="center"
-            android:textColor="#000"
-            android:onClick="startService"
-            android:text="시작"
+            android:text="텍스트를 입력하세요"
             android:textSize="20sp"
-            android:textStyle="bold" />
-        <Space
-            android:layout_width="5dp"
-            android:layout_height="match_parent" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/round"
-            android:gravity="center"
-            android:textColor="#000"
-            android:onClick="stopService"
-            android:text="중지"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-        <Space
-            android:layout_width="5dp"
-            android:layout_height="match_parent" />
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/round"
-            android:gravity="center"
-            android:textColor="#292929"
-            android:onClick="stopService"
-            android:hint="횟수 입력"
-            android:id="@+id/editTimes"
-            android:inputType="number"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-
+            android:textColor="#000"/>
     </LinearLayout>
-    <Space
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.1" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_weight="1"
-        android:background="@drawable/round"
-        android:gravity="center"
-        android:textColor="#000"
-        android:onClick="OK"
-        android:text="확인"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"/>
+        android:layout_weight="8.5"
+        android:orientation="vertical"
+        android:layout_margin="12dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:background="@drawable/round">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/editText"
+                    android:background="@android:color/transparent"/>
+            </ScrollView>
+        </RelativeLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="실행"
+                android:onClick="startService"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:background="@drawable/round"/>
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="종료"
+                android:onClick="stopService"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:background="@drawable/round"/>
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="저장"
+                android:onClick="saveOptions"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:background="@drawable/round"/>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="미리\n보기"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:onClick="fastView"
+                android:background="@drawable/round"/>
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="색상"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:onClick="Color"
+                android:background="@drawable/round"/>
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="match_parent" />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:hint="글씨\n크기"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:onClick="setTextSize"
+                android:id="@+id/setTextSize"
+                android:background="@drawable/round"/>
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="match_parent" />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/editTimes"
+                android:layout_weight="1"
+                android:hint="클릭\n횟수"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:background="@drawable/round"/>
+        </LinearLayout>
+    </LinearLayout>
+    <!--<Space-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="0.1" />-->
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:gravity="center"-->
+        <!--android:text="내용을 입력하세요."-->
+        <!--android:textColor="#000"-->
+        <!--android:textSize="25sp"-->
+        <!--android:textStyle="bold" />-->
+
+    <!--<Space-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="0.1" />-->
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="10"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:layout_marginRight="5dp"-->
+        <!--android:background="@drawable/round">-->
+        <!--<EditText-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:gravity="center|left"-->
+            <!--android:hint="입력"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textSize="25sp"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--android:id="@+id/editText"-->
+            <!--android:textColor="#000" />-->
+    <!--</RelativeLayout>-->
+
+    <!--<Space-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="0.1" />-->
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:layout_marginRight="5dp">-->
+        <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/round"-->
+            <!--android:gravity="center"-->
+            <!--android:textColor="#000"-->
+            <!--android:onClick="startService"-->
+            <!--android:text="시작"-->
+            <!--android:textSize="20sp"-->
+            <!--android:textStyle="bold" />-->
+        <!--<Space-->
+            <!--android:layout_width="5dp"-->
+            <!--android:layout_height="match_parent" />-->
+        <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/round"-->
+            <!--android:gravity="center"-->
+            <!--android:textColor="#000"-->
+            <!--android:onClick="stopService"-->
+            <!--android:text="중지"-->
+            <!--android:textSize="20sp"-->
+            <!--android:textStyle="bold" />-->
+        <!--<Space-->
+            <!--android:layout_width="5dp"-->
+            <!--android:layout_height="match_parent" />-->
+        <!--<EditText-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/round"-->
+            <!--android:gravity="center"-->
+            <!--android:textColor="#292929"-->
+            <!--android:onClick="stopService"-->
+            <!--android:hint="횟수 입력"-->
+            <!--android:id="@+id/editTimes"-->
+            <!--android:inputType="number"-->
+            <!--android:textSize="20sp"-->
+            <!--android:textStyle="bold"/>-->
+
+    <!--</LinearLayout>-->
+    <!--<Space-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="0.1" />-->
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:layout_marginRight="5dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@drawable/round"-->
+        <!--android:gravity="center"-->
+        <!--android:textColor="#000"-->
+        <!--android:onClick="OK"-->
+        <!--android:text="확인"-->
+        <!--android:textSize="20sp"-->
+        <!--android:textStyle="bold" />-->
+    <!--<Space-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="0.1"/>-->
 </LinearLayout>
